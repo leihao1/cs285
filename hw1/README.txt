@@ -91,11 +91,13 @@ Run the following command for Section 2 (DAGGER):
 
 $ python cs285/scripts/run_hw1_behavior_cloning.py --expert_policy_file cs285/policies/experts/Ant.pkl --env_name Ant-v2 --exp_name test_dagger_ant --n_iter 10 --do_dagger --expert_data cs285/expert_data/expert_data_Ant-v2.pkl
 
+$ python cs285/scripts/run_hw1_behavior_cloning.py --expert_policy_file cs285/policies/experts/Humanoid.pkl --env_name Humanoid-v2 --exp_name test_dg_humanoid --n_iter 20 --expert_data cs285/expert_data/expert_data_Humanoid-v2.pkl --video_log_freq 2 --do_dagger --batch_size=1000 --eval_batch_size=5000
+
 ##############################################
 
 6) visualize saved tensorboard event file:
 
 $ cd cs285/data/<your_log_dir>
-$ tensorboard --logdir .
+$ tensorboard --logdir . ($ python -m tensorboard.main --logdir .)
 
 Then, navigate to shown url to see scalar summaries as plots (in 'scalar' tab), as well as videos (in 'images' tab)
